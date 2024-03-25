@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpf3xfv5vhfpx"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_lpdv6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpdv6")
+
+[node name="Neues Spiel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 256.0
+offset_right = 628.0
+offset_bottom = 287.0
+text = "Neues Spiel"
+
+[node name="Optionen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 318.0
+offset_right = 620.0
+offset_bottom = 349.0
+text = "Optionen"
+
+[node name="Beenden" type="Button" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 368.0
+offset_right = 622.0
+offset_bottom = 399.0
+text = "Beenden
+"
+
+[connection signal="pressed" from="Neues Spiel" to="." method="_on_neues_spiel_pressed"]
+[connection signal="pressed" from="Optionen" to="." method="_on_optionen_pressed"]
+[connection signal="pressed" from="Beenden" to="." method="_on_beenden_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1cvouxxjmvc"]
+
+[ext_resource type="Texture2D" uid="uid://pc5oo1qcivve" path="res://tree.png" id="1_tbj07"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g2yqe"]
+rough = true
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rychd"]
+a = Vector2(10, -15)
+b = Vector2(-1, 22)
+
+[node name="StaticBody2D" type="RigidBody2D" groups=["Baum"]]
+input_pickable = true
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_g2yqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Baum"]]
+texture = ExtResource("1_tbj07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Baum"]]
+position = Vector2(-10, 10)
+shape = SubResource("SegmentShape2D_rychd")
